@@ -1,8 +1,12 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+const poppins = Montserrat({ weight: "600", subsets: ["latin"] });
 
 const Sidebar = () => {
   return (
@@ -13,7 +17,9 @@ const Sidebar = () => {
             <Image src="/logo.png" alt="logo" fill />
           </div>
         </Link>
-        <h1 className="text-2xl font-bold">Genius AI</h1>
+        <h1 className={cn("text-2xl font-bold", poppins.className)}>
+          Genius AI
+        </h1>
       </div>
     </div>
   );
