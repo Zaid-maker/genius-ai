@@ -1,35 +1,31 @@
-name: OpenCommit Action
+name: Node.js Workflow
 
 on:
   push:
-    branches-ignore: [main]
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  opencommit:
-    timeout-minutes: 10
-    name: OpenCommit
+  build:
+    name: Node.js
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18"
+          cache: "npm"
 
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Install Dependencies
+        run: npm ci --production
 
-      - uses: di-sukharev/opencommit@github-action-v1.0.4
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          OCO_OPENAI_API_KEY: ${{ secrets.OCO_OPENAI_API_KEY }}
-          # customization
-          OCO_OPENAI_MAX_TOKENS: 500
-          OCO_OPENAI_BASE_PATH: ""
-          OCO_DESCRIPTION: false
-          OCO_EMOJI: true
-          OCO_MODEL: gpt-3.5-turbo
-          OCO_LANGUAGE: en
+      - name: Build
+        run: npm run build
+
+      - name: Lint
+        run: run lint
