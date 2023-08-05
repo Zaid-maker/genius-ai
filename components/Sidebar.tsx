@@ -1,12 +1,34 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { ImageIcon, LayoutDashboard, MessageSquare } from "lucide-react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const poppins = Montserrat({ weight: "600", subsets: ["latin"] });
+
+const routes = [
+  {
+    label: "Dashboard",
+    icon: LayoutDashboard,
+    href: "/dashboard",
+    color: "text-gray-500",
+  },
+  {
+    label: "Conversation",
+    icon: MessageSquare,
+    href: "/conversation",
+    color: "text-violet-500",
+  },
+  {
+    label: "Image Generation",
+    icon: ImageIcon,
+    href: "/image",
+    color: "text-pink-700",
+  },
+];
 
 const Sidebar = () => {
   return (
