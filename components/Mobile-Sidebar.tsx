@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
-import { Sidebar } from "@/components/Sidebar";
-import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+
+import { Sidebar } from "@/components/sidebar";
+import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const MobileSidebar = () => {
@@ -14,7 +14,7 @@ const MobileSidebar = () => {
           <Menu />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent side="left" className="p-0">
         <Sidebar />
       </SheetContent>
     </Sheet>
