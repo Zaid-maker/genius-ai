@@ -2,7 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ImageIcon, LayoutDashboard, MessageSquare } from "lucide-react";
+import {
+  Code,
+  ImageIcon,
+  LayoutDashboard,
+  MessageSquare,
+  Music,
+  Settings,
+  VideoIcon,
+} from "lucide-react";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,6 +36,29 @@ const routes = [
     icon: ImageIcon,
     href: "/image",
     color: "text-pink-700",
+  },
+  {
+    label: "Video Generation",
+    icon: VideoIcon,
+    color: "text-orange-700",
+    href: "/video",
+  },
+  {
+    label: "Music Generation",
+    icon: Music,
+    color: "text-emerald-500",
+    href: "/music",
+  },
+  {
+    label: "Code Generation",
+    icon: Code,
+    color: "text-green-700",
+    href: "/code",
+  },
+  {
+    label: "Settings",
+    icon: Settings,
+    href: "/settings",
   },
 ];
 
