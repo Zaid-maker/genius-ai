@@ -38,10 +38,10 @@ const Sidebar = () => {
           <div className="relative h-8 w-8 mr-4">
             <Image src="/logo.png" alt="logo" fill />
           </div>
+          <h1 className={cn("text-2xl font-bold", poppins.className)}>
+            Genius AI
+          </h1>
         </Link>
-        <h1 className={cn("text-2xl font-bold", poppins.className)}>
-          Genius AI
-        </h1>
       </div>
     </div>
   );
