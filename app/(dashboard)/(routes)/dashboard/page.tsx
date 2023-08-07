@@ -5,15 +5,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, MessageSquare } from "lucide-react";
 import React from "react";
 
-const tools = [
-  {
-    label: "Çonversation",
-    icon: MessageSquare,
-    color: "text-violet-500",
-    bgColor: "bg-violet-500/10",
-    href: "/conversation",
-  },
-];
+import { tools } from "@/constants";
 
 const DashboardPage = () => {
   return (
