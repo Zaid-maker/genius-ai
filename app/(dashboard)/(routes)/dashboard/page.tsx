@@ -1,6 +1,17 @@
 "use client";
 
+import { MessageSquare } from "lucide-react";
 import React from "react";
+
+const tools = [
+  {
+    label: "Çonversation",
+    icon: MessageSquare,
+    color: "text-violet-500",
+    bgColor: "bg-violet-500/10",
+    href: "/conversation",
+  },
+];
 
 const DashboardPage = () => {
   return (
@@ -12,6 +23,10 @@ const DashboardPage = () => {
         <p className="text-muted-foreground font-light text-sm md:text-lg text-center">
           Chat with the smartest AI - Experience the power of AI
         </p>
+      </div>
+
+      <div className="px-4 md:px:20 lg:px-32 space-y-4">
+        {tools.map((tool) => {})}
       </div>
     </div>
   );
