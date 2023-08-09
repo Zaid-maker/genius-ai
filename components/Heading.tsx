@@ -16,5 +16,5 @@ export const Heading = ({
   iconColor,
   bgColor,
 }: HeadingProps) => {
-  return <div>Heading</div>;
+  return <div>{title}</div>;
 };
