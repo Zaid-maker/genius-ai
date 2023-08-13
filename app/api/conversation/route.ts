@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuratiion = new Configuration({
@@ -11,5 +12,6 @@ export async function POST(req: Request) {
 
     } catch (error) {
         console.log('[CONVERSATION_ERROR]', error)
+        return new NextResponse("Internal Error", { status: 500 })
     }
 }
