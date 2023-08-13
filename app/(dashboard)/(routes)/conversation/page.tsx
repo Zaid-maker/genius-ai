@@ -9,6 +9,7 @@ import React from "react";
 import { formSchema } from "./constants";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Conversation = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -55,9 +56,18 @@ const Conversation = () => {
                   </FormItem>
                 )}
               />
+              <Button
+                className="col-span-12 lg:col-span-2 w-full"
+                type="submit"
+                disabled={isLoading}
+                size="icon"
+              >
+                Generate
+              </Button>
             </form>
           </Form>
         </div>
+        <div className="space-y-4 mt-4">Messages Content</div>
       </div>
     </div>
   );
