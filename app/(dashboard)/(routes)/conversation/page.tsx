@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MessageSquare } from "lucide-react";
+import { Loader, MessageSquare } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ChatCompletionRequestMessage } from "openai";
 import { useState } from "react";
@@ -52,7 +52,7 @@ const Conversation = () => {
     <div>
       <Heading
         title="Conversation"
-        description="Our Most Advanced conversation model"
+        description="Our most advanced conversation model."
         icon={MessageSquare}
         iconColor="text-violet-500"
         bgColor="bg-violet-500/10"
@@ -90,7 +90,13 @@ const Conversation = () => {
             </form>
           </Form>
         </div>
-        <div className="space-y-4 mt-4">Messages Content</div>
+        <div className="space-y-4 mt-4">
+          {isLoading && (
+            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+              <Loader />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
