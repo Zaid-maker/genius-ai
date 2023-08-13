@@ -15,6 +15,7 @@ import * as z from "zod";
 import { formSchema } from "./constants";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { toast } from "react-hot-toast";
+import { cn } from "@/lib/utils";
 
 const Conversation = () => {
   const router = useRouter();
@@ -103,6 +104,22 @@ const Conversation = () => {
               <Loader />
             </div>
           )}
+          <div className="flex flex-col-reverse gap-y-4">
+            {messages.map((message) => (
+              <div
+                key={message.content}
+                className={cn(
+                  "p-8 w-full flex items-start gap-x-8 rounded-lg",
+                  message.role === "user"
+                    ? "bg-white border border-black/10"
+                    : "bg-muted"
+                )}
+              >
+                {message.role === "user"}
+                <p className="text-sm">{message.content}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
