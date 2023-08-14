@@ -18,7 +18,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import * as z from "zod";
 import { formSchema } from "./constants";
-import { Empty } from "@/components/ui/empy";
+import { Empty } from "@/components/ui/empty";
 
 const Conversation = () => {
   const router = useRouter();
