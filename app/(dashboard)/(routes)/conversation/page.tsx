@@ -18,6 +18,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import * as z from "zod";
 import { formSchema } from "./constants";
+import { Empty } from "@/components/ui/empy";
 
 const Conversation = () => {
   const router = useRouter();
@@ -105,6 +106,9 @@ const Conversation = () => {
             <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
               <Loader />
             </div>
+          )}
+          {messages.length === 0 && !isLoading && (
+            <Empty label="No Conversation Started" />
           )}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message) => (
