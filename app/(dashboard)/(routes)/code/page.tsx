@@ -10,7 +10,7 @@ import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { Loader, MessageSquare } from "lucide-react";
+import { Loader, Code } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ChatCompletionRequestMessage } from "openai";
 import { useState } from "react";
@@ -20,7 +20,7 @@ import * as z from "zod";
 import { formSchema } from "./constants";
 import { Empty } from "@/components/ui/empty";
 
-const Code = () => {
+const CodePage = () => {
   const router = useRouter();
   const proModal = useProModal();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -62,11 +62,11 @@ const Code = () => {
   return (
     <div>
       <Heading
-        title="Conversation"
-        description="Our most advanced conversation model."
-        icon={MessageSquare}
-        iconColor="text-violet-500"
-        bgColor="bg-violet-500/10"
+        title="Code Generation"
+        description="Generate code using descriptive text."
+        icon={Code}
+        iconColor="text-green-700"
+        bgColor="bg-green-700/10"
       />
       <div className="px-4 lg:px-8">
         <div>
@@ -132,4 +132,4 @@ const Code = () => {
   );
 };
 
-export default Code;
+export default CodePage;
