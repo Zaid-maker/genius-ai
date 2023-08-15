@@ -3,6 +3,7 @@
 import { Heading } from "@/components/Heading";
 import { BotAvatar } from "@/components/bot-avatar";
 import { Button } from "@/components/ui/button";
+import { Empty } from "@/components/ui/empty";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { UserAvatar } from "@/components/user-avatar";
@@ -10,16 +11,15 @@ import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import ReactMarkdown from "react-markdown";
-import { Loader, Code } from "lucide-react";
+import { Code, Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ChatCompletionRequestMessage } from "openai";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import ReactMarkdown from "react-markdown";
 import * as z from "zod";
 import { formSchema } from "./constants";
-import { Empty } from "@/components/ui/empty";
 
 const CodePage = () => {
   const router = useRouter();
