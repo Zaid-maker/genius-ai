@@ -20,6 +20,7 @@ import { toast } from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
 import * as z from "zod";
 import { formSchema } from "./constants";
+import { Select, SelectContent } from "@/components/ui/select";
 
 const ImagePage = () => {
   const router = useRouter();
@@ -74,7 +75,7 @@ const ImagePage = () => {
               <FormField
                 name="prompt"
                 render={({ field }) => (
-                  <FormItem className="col-span-12 lg:col-span-10">
+                  <FormItem className="col-span-12 lg:col-span-6">
                     <FormControl className="m-0 p-0">
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
@@ -87,7 +88,6 @@ const ImagePage = () => {
                 )}
               />
               <FormField
-                control={form.control}
                 name="amount"
                 render={({ field }) => (
                   <FormItem className="col-span-12 lg:col-span-2"></FormItem>
