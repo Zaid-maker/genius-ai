@@ -86,6 +86,13 @@ const ImagePage = () => {
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="amount"
+                render={({ field }) => (
+                  <FormItem className="col-span-12 lg:col-span-2"></FormItem>
+                )}
+              />
               <Button
                 className="col-span-12 lg:col-span-2 w-full"
                 type="submit"
