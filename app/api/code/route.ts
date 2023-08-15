@@ -19,6 +19,18 @@ export async function POST(req: Request) {
         const body = await req.json()
         const { messages } = body
 
+        if (!userId) {
+            throw new NextResponse('Unauthorized', { status: 401 })
+        }
+
+        if (!configuration.apiKey) {
+            throw new NextResponse('Openai API Key not configured', { status: 500 })
+        }
+
+        if (!messages) {
+            throw new NextResponse('Messages are required', { status: 400 })
+        }
+
         const response = await openai.createChatCompletion({
             model: 'gpt-3.5-turbo',
             messages: [instructionMessage, ...messages]
