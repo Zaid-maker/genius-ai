@@ -21,7 +21,7 @@ import ReactMarkdown from "react-markdown";
 import * as z from "zod";
 import { formSchema } from "./constants";
 
-const CodePage = () => {
+const ImagePage = () => {
   const router = useRouter();
   const proModal = useProModal();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -147,4 +147,4 @@ const CodePage = () => {
   );
 };
 
-export default CodePage;
+export default ImagePage;
