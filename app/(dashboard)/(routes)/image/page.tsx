@@ -37,18 +37,13 @@ const ImagePage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const userMessage: ChatCompletionRequestMessage = {
-        role: "user",
-        content: values.prompt,
-      };
-      const newMessages = [...messages, userMessage];
+      // setPhotos([]);
 
-      const response = await axios.post("/api/code", {
-        messages: newMessages,
-      });
-      setMessages((current) => [...current, userMessage, response.data]);
+      const response = await axios.post("/api/image", values);
 
-      form.reset();
+      const urls = response.data.map((image: { url: string }) => image.url);
+
+      // setPhotos(urls);
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
