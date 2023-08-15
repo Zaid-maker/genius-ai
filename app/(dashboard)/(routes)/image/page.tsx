@@ -90,7 +90,12 @@ const ImagePage = () => {
               <FormField
                 name="amount"
                 render={({ field }) => (
-                  <FormItem className="col-span-12 lg:col-span-2"></FormItem>
+                  <FormItem className="col-span-12 lg:col-span-2">
+                    <Select>
+                      <FormControl></FormControl>
+                      <SelectContent></SelectContent>
+                    </Select>
+                  </FormItem>
                 )}
               />
               <Button
