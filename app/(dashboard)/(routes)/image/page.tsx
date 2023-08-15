@@ -79,7 +79,7 @@ const ImagePage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="Simple toggle button using react hooks."
+                        placeholder="A picture of a horse in Swiss alps"
                         {...field}
                       />
                     </FormControl>
