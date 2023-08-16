@@ -11,7 +11,7 @@ import { useProModal } from "@/hooks/use-pro-modal";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { Code, Loader } from "lucide-react";
+import { Code, ImageIcon, Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ChatCompletionRequestMessage } from "openai";
 import { useState } from "react";
@@ -63,9 +63,9 @@ const ImagePage = () => {
   return (
     <div>
       <Heading
-        title="Code Generation"
+        title="Image Generation"
         description="Generate code using descriptive text."
-        icon={Code}
+        icon={ImageIcon}
         iconColor="text-green-700"
         bgColor="bg-green-700/10"
       />
