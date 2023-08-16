@@ -83,7 +83,7 @@ const PhotoPage = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                       disabled={isLoading}
-                      placeholder="A picture of Horse in Swiss alps"
+                      placeholder="A picture of a Horse in Swiss alps"
                       {...field}
                     />
                   </FormControl>
@@ -100,6 +100,11 @@ const PhotoPage = () => {
             </Button>
           </form>
         </Form>
+        {isLoading && (
+          <div className="p-20">
+            <Loader />
+          </div>
+        )}
       </div>
     </div>
   );
