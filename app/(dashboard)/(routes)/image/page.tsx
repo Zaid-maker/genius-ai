@@ -20,6 +20,8 @@ import { toast } from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
 import * as z from "zod";
 import { formSchema } from "./constants";
+import { Select, SelectValue } from "@/components/ui/select";
+import { SelectTrigger } from "@radix-ui/react-select";
 
 const PhotoPage = () => {
   const router = useRouter();
@@ -87,6 +89,26 @@ const PhotoPage = () => {
                       {...field}
                     />
                   </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="prompt"
+              render={({ field }) => (
+                <FormItem className="col-span-12 lg:col-span-2">
+                  <Select
+                    disabled={isLoading}
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue defaultValue={field.value} />
+                      </SelectTrigger>
+                    </FormControl>
+                  </Select>
                 </FormItem>
               )}
             />
