@@ -1,14 +1,17 @@
 "use client";
 
 import { Heading } from "@/components/Heading";
-import { BotAvatar } from "@/components/bot-avatar";
 import { Button } from "@/components/ui/button";
-import { Empty } from "@/components/ui/empty";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { UserAvatar } from "@/components/user-avatar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useProModal } from "@/hooks/use-pro-modal";
-import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { ImageIcon, Loader } from "lucide-react";
@@ -17,16 +20,8 @@ import { ChatCompletionRequestMessage } from "openai";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import ReactMarkdown from "react-markdown";
 import * as z from "zod";
 import { amountOptions, formSchema } from "./constants";
-import {
-  Select,
-  SelectContent,
-  SelectValue,
-  SelectTrigger,
-  SelectItem,
-} from "@/components/ui/select";
 
 const PhotoPage = () => {
   const router = useRouter();
