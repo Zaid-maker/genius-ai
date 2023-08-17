@@ -19,9 +19,14 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
 import * as z from "zod";
-import { formSchema } from "./constants";
-import { Select, SelectValue } from "@/components/ui/select";
-import { SelectTrigger } from "@radix-ui/react-select";
+import { amountOptions, formSchema } from "./constants";
+import {
+  Select,
+  SelectContent,
+  SelectValue,
+  SelectTrigger,
+  SelectItem,
+} from "@/components/ui/select";
 
 const PhotoPage = () => {
   const router = useRouter();
@@ -110,6 +115,13 @@ const PhotoPage = () => {
                         <SelectValue defaultValue={field.value} />
                       </SelectTrigger>
                     </FormControl>
+                    <SelectContent>
+                      {amountOptions.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
                   </Select>
                 </FormItem>
               )}
