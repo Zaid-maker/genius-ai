@@ -21,9 +21,11 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import * as z from "zod";
 import { amountOptions, formSchema } from "./constants";
+import { Empty } from "@/components/ui/empty";
 
 const PhotoPage = () => {
   const router = useRouter();
+  const [images, setImages] = useState<string[]>([]);
   const proModal = useProModal();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -124,6 +126,9 @@ const PhotoPage = () => {
           <div className="p-20">
             <Loader />
           </div>
+        )}
+        {images.length === 0 && !isLoading && (
+          <Empty label="No images generated." />
         )}
       </div>
     </div>
