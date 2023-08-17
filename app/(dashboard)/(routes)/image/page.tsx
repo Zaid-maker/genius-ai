@@ -32,6 +32,8 @@ const PhotoPage = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       prompt: "",
+      amount: "1",
+      resolution: "512x512",
     },
   });
 
