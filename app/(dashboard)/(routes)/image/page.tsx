@@ -41,7 +41,11 @@ const PhotoPage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const response = await axios.post("/api/code");
+      setImages([]);
+
+      const response = await axios.post("/api/code", values);
+
+      const urls = response.data.map((image: { url: string }) => image.url);
 
       form.reset();
     } catch (error: any) {
