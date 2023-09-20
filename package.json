@@ -28,7 +28,7 @@
     "lucide-react": "^0.263.1",
     "next": "13.4.19",
     "openai": "^3.3.0",
-    "postcss": "8.4.27",
+    "postcss": "8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.4",
